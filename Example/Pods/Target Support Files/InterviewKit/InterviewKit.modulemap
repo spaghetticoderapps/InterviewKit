@@ -1,0 +1,6 @@
+framework module InterviewKit {
+  umbrella header "InterviewKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

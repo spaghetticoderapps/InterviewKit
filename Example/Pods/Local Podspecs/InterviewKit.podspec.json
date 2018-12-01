@@ -1,0 +1,22 @@
+{
+  "name": "InterviewKit",
+  "version": "0.1.0",
+  "summary": "A short description of InterviewKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/spaghetticoderapps@gmail.com/InterviewKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "spaghetticoderapps@gmail.com": "spaghetticoderapps@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/spaghetticoderapps@gmail.com/InterviewKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "InterviewKit/Classes/**/*"
+}

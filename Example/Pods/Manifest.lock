@@ -1,0 +1,16 @@
+PODS:
+  - InterviewKit (0.1.0)
+
+DEPENDENCIES:
+  - InterviewKit (from `../`)
+
+EXTERNAL SOURCES:
+  InterviewKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  InterviewKit: bee12005d6f1aebc905aeea8e049cfeabe020972
+
+PODFILE CHECKSUM: ba726df147607dc5528d38c96fc4e636e65ec32a
+
+COCOAPODS: 1.5.3
