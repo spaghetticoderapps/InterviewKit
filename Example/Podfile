@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'InterviewKit_Example' do
+  pod 'InterviewKit', :path => '../'
+
+  target 'InterviewKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
