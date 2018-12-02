@@ -18,8 +18,7 @@ public extension String {
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { (dataResponse, response, error) in
             
             if error != nil { return }
             
@@ -28,7 +27,7 @@ public extension String {
             // Check that request is good
             if resp.statusCode == 200 {
                 
-                guard let data = data else {
+                guard let data = dataResponse else {
                     print("Error: Could not get data")
                     return
                 }
@@ -42,5 +41,7 @@ public extension String {
         }
         task.resume()
     }
+
+    
     
 }
