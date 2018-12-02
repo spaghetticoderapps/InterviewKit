@@ -9,6 +9,10 @@ import UIKit
 
 public extension UIView {
     
+    public func test() {
+        print("test")
+    }
+    
     public func swapToViewController(containerViewController: UIViewController, destinationViewController: UIViewController) {
         
         let child = containerViewController.children[0]
