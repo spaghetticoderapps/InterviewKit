@@ -9,10 +9,6 @@ import UIKit
 
 public extension UIView {
     
-    public func test() {
-        print("test")
-    }
-    
     public func swapToViewController(containerViewController: UIViewController, destinationViewController: UIViewController) {
         
         let child = containerViewController.children[0]
@@ -26,7 +22,7 @@ public extension UIView {
         self.addSubview(destinationViewController.view)
         destinationViewController.view.frame = self.bounds
         destinationViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        destinationViewController.view.alpha = 0
+        
         
         
         destinationViewController.didMove(toParent: containerViewController)
