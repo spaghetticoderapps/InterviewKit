@@ -9,12 +9,12 @@ import UIKit
 
 public extension Data {
     
-    public func decode<T: Decodable> (type: T.Type) -> [T] {
+    func decode<T: Decodable> (type: T.Type) -> [T] {
         
         let objects = [T]()
         
         let decoder = JSONDecoder()
-        
+        decoder.dateDecodingStrategy = .iso8601
         do {
             return try [decoder.decode(type, from: self)]
         }

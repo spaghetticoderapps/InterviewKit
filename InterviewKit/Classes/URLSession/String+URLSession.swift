@@ -9,7 +9,7 @@ import UIKit
 
 public extension String {
     
-    public func get(completion: @escaping (Data?)->()) {
+    func get(completion: @escaping (Data?)->()) {
         
         guard let url = URL(string: self) else {
             print("Error: Could not convert string to URL.")
