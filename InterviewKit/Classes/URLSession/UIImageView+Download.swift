@@ -48,6 +48,14 @@ public extension UIImageView {
                         }
                     }
                 }
+            } else {
+                // Handle download error
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 0.7) {
+                        self?.alpha = 0.3
+                        self?.image = UIImage(named: "placeholder")
+                    }
+                }
             }
         }
     }
