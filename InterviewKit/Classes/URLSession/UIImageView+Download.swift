@@ -14,6 +14,52 @@ class IKImageCache {
 }
 
 public extension UIImageView {
+    
+    func download(from url: URL?) {
+        alpha = 0
+        image = nil
+        
+        guard let url = url else {
+            UIView.animate(withDuration: 0.7) {
+                self.alpha = 0.3
+                self.image = UIImage(named: "placeholder")
+            }
+            return
+        }
+        
+        if let cachedImage = IKImageCache.shared.cache.object(forKey: url as AnyObject) as? UIImage {
+            UIView.animate(withDuration: 0.7) {
+                self.alpha = 0.3
+                self.image = cachedImage
+            }
+            return
+        }
+        
+        DispatchQueue.global().async { [weak self] in
+            guard let strongSelf = self else { return }
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        IKImageCache.shared.cache.setObject(image, forKey: url as AnyObject)
+                        
+                        UIView.animate(withDuration: 0.7) {
+                            strongSelf.alpha = 0.3
+                            strongSelf.image = image
+                        }
+                    }
+                }
+            } else {
+                // Handle download error
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 0.7) {
+                        self?.alpha = 0.3
+                        self?.image = UIImage(named: "placeholder")
+                    }
+                }
+            }
+        }
+    }
+    
     func download(from url: String) {
         alpha = 0
         image = nil
@@ -21,7 +67,7 @@ public extension UIImageView {
         guard let url = URL(string: url) else {
             UIView.animate(withDuration: 0.7) {
                 self.alpha = 1
-                self.image = UIImage(named: "plate")
+//                self.image = UIImage
             }
             return
         }
