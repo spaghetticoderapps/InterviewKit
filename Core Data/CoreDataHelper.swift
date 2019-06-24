@@ -11,15 +11,33 @@ import CoreData
 public class CoreDataHelper<T> {
     
     var managedObjectContext: NSManagedObjectContext
+    var fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "\(T.self)")
     
     public init(managedObjectContext: NSManagedObjectContext) {
         self.managedObjectContext = managedObjectContext
     }
     
+    public var isInDataStore: Bool {
+        do {
+            let entities = try managedObjectContext.fetch(fetchRequest)
+            return !entities.isEmpty
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return false
+    }
+    
+    public func getALlEntities() -> [T] {
+        do {
+            let entities = try managedObjectContext.fetch(fetchRequest)
+            return entities as! [T]
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return []
+    }
+    
     public func printEntities() {
-        let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: "\(T.self)")
-        
         do {
             let entities = try managedObjectContext.fetch(fetchRequest)
             print("\n\n\n****** PRINTING \(entities.count) \(T.self) objects ******\n\n")
@@ -36,9 +54,6 @@ public class CoreDataHelper<T> {
     }
     
     public func deleteEntities() {
-        let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: "\(T.self)")
-        
         do {
             let entities = try managedObjectContext.fetch(fetchRequest)
             entities.forEach { managedObject in
