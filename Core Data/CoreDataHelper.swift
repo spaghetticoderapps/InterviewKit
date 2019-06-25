@@ -26,6 +26,18 @@ public class CoreDataHelper<T> {
         }
         return false
     }
+   
+    public func isInDataStore(_ id: Int16) -> Bool {
+        do {
+            fetchRequest.predicate = NSPredicate(format: "id == %d", id)
+            let entities = try managedObjectContext.fetch(fetchRequest)
+            return !entities.isEmpty
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return false
+    }
+    
     
     public func getALlEntities() -> [T] {
         do {

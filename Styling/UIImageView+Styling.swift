@@ -22,4 +22,13 @@ public extension UIImageView {
         self.bringSubviewToFront(view)
     }
     
+    func setToPlaceholder() {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.7) {
+                self.alpha = 0.3
+                self.image = UIImage(named: "placeholder")
+            }
+        }
+    }
+    
 }
