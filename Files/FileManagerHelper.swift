@@ -19,21 +19,25 @@ public class FileManagerHelper {
                     print("download error:", error ?? "")
                     return
                 }
-                // move the downloaded file from the temporary location url to your app documents directory
                 do {
                     let fileName = response?.suggestedFilename ?? url.lastPathComponent
                     let fileURL = documents.appendingPathComponent(fileName)
-                    try FileManager.default.moveItem(at: temporaryFileLocationURL, to: fileURL)
-//                    completion(fileName)
+                    if !FileManagerHelper.isFileInSystem(fileName: fileName) {
+                        try FileManager.default.moveItem(at: temporaryFileLocationURL, to: fileURL)
+                    }
+                    completion(fileName)
                 } catch {
                     print(error)
                     completion(nil)
                 }
                 }.resume()
+        } else {
+            completion(nil)
         }
     }
     
-    public static func isFileInSystem(fileName: String) -> Bool {
+    public static func isFileInSystem(fileName: String?) -> Bool {
+        guard let fileName = fileName else { return false }
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let url = NSURL(fileURLWithPath: path)
         if let pathComponent = url.appendingPathComponent(fileName) {
