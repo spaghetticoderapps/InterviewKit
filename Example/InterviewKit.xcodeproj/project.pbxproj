@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		147B9B9DE7865B80E70735E8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		147B9B9DE7865B80E70735E8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1796975ECCF7E5E9A4A27CB1 /* Pods-InterviewKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewKit_Example/Pods-InterviewKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		28E5092CA641FD2497373319 /* Pods-InterviewKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewKit_Tests/Pods-InterviewKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* InterviewKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,11 +41,11 @@
 		607FACE51AFB9204008FA782 /* InterviewKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterviewKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		70AAF120F123C7B93B13AC2C /* InterviewKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = InterviewKit.podspec; path = ../InterviewKit.podspec; sourceTree = "<group>"; };
+		70AAF120F123C7B93B13AC2C /* InterviewKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = InterviewKit.podspec; path = ../InterviewKit.podspec; sourceTree = "<group>"; };
 		7A4670595992591FD1D72E23 /* Pods-InterviewKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewKit_Example/Pods-InterviewKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8AD37EE68B109E6ACE57555B /* Pods_InterviewKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterviewKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E613480A6B3F9F2DD32FA0 /* Pods_InterviewKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterviewKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4FEB7B417D18576E6DFCF3A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B4FEB7B417D18576E6DFCF3A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F2859FE737E37A4EFF85C544 /* Pods-InterviewKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewKit_Tests/Pods-InterviewKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -269,7 +270,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-InterviewKit_Example/Pods-InterviewKit_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-InterviewKit_Example/Pods-InterviewKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/InterviewKit/InterviewKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -280,7 +281,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InterviewKit_Example/Pods-InterviewKit_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InterviewKit_Example/Pods-InterviewKit_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5F7A386D40011C1B7A261F8B /* [CP] Check Pods Manifest.lock */ = {
@@ -422,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -468,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
