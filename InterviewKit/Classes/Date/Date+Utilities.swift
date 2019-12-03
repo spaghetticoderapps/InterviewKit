@@ -9,12 +9,10 @@ import Foundation
 
 public extension Date {
     
-    func localDateString() -> String {
+    func localDateString(dateFormat: String = "MMMM d, yyyy 'at' h:mma") -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d, yyyy 'at' h:mma"
+        dateFormatter.dateFormat = dateFormat
         dateFormatter.timeZone = NSTimeZone.local
         return dateFormatter.string(from: self)
-        
     }
-    
 }
